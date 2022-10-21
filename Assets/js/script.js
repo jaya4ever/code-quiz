@@ -1,6 +1,8 @@
 var startbtn = document.querySelector("#startTime");
 var questionsBody = document.querySelector("#questionsBody");
 var container = document.querySelector("#container");
+var currentTime = document.querySelector('#currentTime');
+
 
 var questions_answers =
     [
@@ -30,3 +32,21 @@ var questions_answers =
     ];
 
 startbtn.addEventListener("click", startQuiz);
+var questions=0;
+var holdInterval = 0;
+var secondsLeft = 76;
+
+function startQuiz (){
+    if(holdInterval === 0){
+        holdInterval = setInterval(startQuiz)
+            secondsLeft--;
+            currentTime.textContent = "Time:" + secondsLeft;
+
+        if(secondsLeft <=0){
+            clearInterval(holdInterval);
+            currentTime.textContent = "Times up";
+        }
+    }
+    render(questions);
+};
+ 
