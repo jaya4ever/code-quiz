@@ -30,23 +30,23 @@ var questions_answers =
             correctanswers: "New Delhi"
         }
     ];
-
-startbtn.addEventListener("click", startQuiz);
-var questions=0;
-var holdInterval = 0;
+var questions = 0;
+var timeInterval = 0;
 var secondsLeft = 76;
 
-function startQuiz (){
-    if(holdInterval === 0){
-        holdInterval = setInterval(startQuiz)
+startbtn.addEventListener("click", startQuiz);
+function startQuiz() {
+    if (timeInterval === 0) {
+        timeInterval = setInterval(function () {
             secondsLeft--;
             currentTime.textContent = "Time:" + secondsLeft;
 
-        if(secondsLeft <=0){
-            clearInterval(holdInterval);
-            currentTime.textContent = "Times up";
-        }
+            if (secondsLeft <= 0) {
+                clearInterval(timeInterval);
+                currentTime.textContent = "Times up";
+            }
+        }, 1000);
+        render(questions);
     }
-    render(questions);
-};
- 
+}
+
