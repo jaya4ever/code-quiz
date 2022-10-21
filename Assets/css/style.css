@@ -5,3 +5,12 @@
     width: 500px;
     height: 500px;
 }
+
+#startTime {
+    background-color: purple;
+    margin-left: 33%;
+    padding: 15px 32px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
