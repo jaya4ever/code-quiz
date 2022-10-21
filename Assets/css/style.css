@@ -1,4 +1,9 @@
-#container {
+header{
+    display: flex;
+    justify-content: space-between;
+    padding:0 10px ;
+}
+main {
     position: absolute;
     left: 30%;
     top: 20%;
@@ -6,11 +11,15 @@
     height: 500px;
 }
 /*ask tutor*/
-#timer {
+/* #timer {
     text-align: right;
    margin-bottom: 0;
    padding-right: 0%;
    font-size: 20px;
+} */
+
+.hide{
+    display: none;
 }
 #startTime {
     background-color: purple;
@@ -21,7 +30,11 @@
     cursor: pointer;
 }
 
-#questionsDiv {
+#startTime:hover{
+  opacity: .75;
+}
+
+#questionsBody {
     margin: 20px;
 }
 
