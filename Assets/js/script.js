@@ -5,11 +5,12 @@ var questionsBody = document.querySelector("#questionsBody");
 
 var timer = document.getElementById('timer');
 var container = document.querySelector("#container");
+
+// TODO: Should I call this question or questions for group ?
 var questionbutton = document.getElementById('questions');
 var currentTime = document.querySelector('#currentTime');
 var scores = document.getElementById('intialsContainer');
 
-var questbn = document.getElementById('questions');
 var buttonA = document.getElementById('a');
 var buttonB = document.getElementById('b');
 var buttonC = document.getElementById('c');
@@ -31,7 +32,7 @@ const questionsAndAnswers =
             optionD: "Wheaton",
 
             correctanswers: "a"
-        },
+        } /*,
         {
             question: 'What is the Capital of Texas:',
             optionA: "Houston",
@@ -58,7 +59,7 @@ const questionsAndAnswers =
             optionD: "Pune",
 
             correctanswers: "c"
-        }
+        }*/
     ];
 
 // Change time here to reduce penalty
@@ -125,10 +126,13 @@ function checkAnswer(buttonId) {
     {
 
         currentScore++;
-    //buttonD.textContent = "TEST";
-    document.getElementById(buttonId).textContent = "Right";
-    setupNextQuestion();
-
+        //buttonD.textContent = "TEST";
+        document.getElementById(buttonId).textContent = "Right";
+        if (currentQuestionIndex < questionsAndAnswers.length) 
+        {
+            
+            setupNextQuestion();
+        }
     }
     else
     {
@@ -149,6 +153,12 @@ function setupSignaturePage() {
 
 // Set the high score page 
 function setupHighScorePage() {
+
+// Set Initial State for Buttons to Hidden
+buttonA.hidden = true;
+buttonB.hidden = true;
+buttonC.hidden = true;
+buttonD.hidden = true;
 
 }
 
@@ -171,13 +181,34 @@ function startQuiz() {
             currentTime.textContent = "Time:" + secondsLeft;
             timer.style.display = "none";
 
+            console.log("Tick..\n");
             // Check Time , Check Question Count
 
             if (secondsLeft <= 0) {
+
+                // User ran out of time.
+
                 clearInterval(timeInterval);
                 currentTime.textContent = "Times up";
                 setupSignaturePage();
             }
+            else if (currentQuestionIndex > questionsAndAnswers.length)
+            {
+                console.log("All Answered..\n");
+
+                //console.log(currentQuestionIndex + "is " + questionsAndAnswers.length);
+                // User answered all questions under time !!!
+
+                clearInterval(timeInterval);
+                //currentTime.textContent = "You answered all questions in "+timeInterval+" seconds.";
+                //setupSignaturePage();
+                //currentTime.textContent = "Times up";
+
+
+            }
+
+
+
         }, 1000);
 
     }
