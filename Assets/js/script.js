@@ -7,14 +7,18 @@ var container = document.querySelector("#container");
 var questionbutton = document.getElementById('questions');
 var currentTime = document.querySelector('#currentTime');
 var scores = document.getElementById('intialsContainer');
+var questbn = document.getElementById('questions');
 var buttonA = document.getElementById('a');
 var buttonB = document.getElementById('b');
 var buttonC = document.getElementById('c');
 var buttonD = document.getElementById('d');
 
+// Store the current correct right answer score
+var currentScore = 0;
+var currentQuestion = null;
 
-
-var questionsAndAnswers =
+// The questions to ask 
+const questionsAndAnswers =
     [
         {
             question: 'What is the Capital of Illinois:',
@@ -70,19 +74,49 @@ buttonC.hidden = true;
 buttonD.hidden = true;
 
 
-
 }
 
 
-// Start the Quiz 
+// Start the Application , ENTRY POINT.
 function initializeQuiz()
 {
+    currentScore = 0;
+
+
+    // Show quiz Questions
     buttonA.hidden = false;
     buttonB.hidden = false;
     buttonC.hidden = false;
     buttonD.hidden = false;
     
+
+    setupNextQuestion();
+
 }
+
+function setupNextQuestion()
+{
+    // Get the initial question to ask
+    currentQuestion = nextQuestion();
+
+    // Re-use Information Text for Question
+    questionsBody.textContent = currentQuestion.question;
+    buttonA.textContent = currentQuestion.optionA;
+    buttonB.textContent = currentQuestion.optionB;
+    buttonC.textContent = currentQuestion.optionC;
+    buttonD.textContent = currentQuestion.optionD;
+
+
+}
+
+// Check the Answer for the current Question
+function checkAnswer(buttonId)
+{
+    //buttonD.textContent = "TEST";
+    document.getElementById(buttonId).textContent = "Test";
+
+}
+
 
 // Hide All buttons , and show Signature Page
 // Reset Initials
@@ -101,7 +135,8 @@ function setupHighScorePage()
 // Get the next Question to Display
 function nextQuestion()  
 { 
-
+    // TODO: Randomize Questions ? (Not in User Story) 
+    return(questionsAndAnswers[0]);
 }
 
 
@@ -128,5 +163,6 @@ function startQuiz() {
 
     }
 }
+
 
 
