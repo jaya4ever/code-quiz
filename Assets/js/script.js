@@ -130,7 +130,7 @@ function checkAnswer(buttonId) {
         document.getElementById(buttonId).textContent = "Right";
         if (currentQuestionIndex < questionsAndAnswers.length) 
         {
-            
+
             setupNextQuestion();
         }
     }
