@@ -27,7 +27,7 @@ const questionsAndAnswers =
             optionC: "Springfield",
             optionD: "Wheaton",
 
-            correctanswers: "Chicago"
+            correctanswers: "a"
         },
         {
             question: 'What is the Capital of Texas:',
@@ -36,7 +36,7 @@ const questionsAndAnswers =
             optionC: "Nashville",
             optionD: "Wheaton",
 
-            correctanswers: "Austin?"
+            correctanswers: "b"
         },
         {
             question: 'What is the Capital of New York:',
@@ -45,7 +45,7 @@ const questionsAndAnswers =
             optionC: "NewYork",
             optionD: "Wheaton",
 
-            correctanswers: "New York"
+            correctanswers: "c"
         },
         {
             question: 'What is the Capital of India:',
@@ -54,7 +54,7 @@ const questionsAndAnswers =
             optionC: "Delhi",
             optionD: "Pune",
 
-            correctanswers: "New Delhi"
+            correctanswers: "c"
         }
     ];
 
@@ -108,9 +108,13 @@ function setupNextQuestion() {
 
 // Check the Answer for the current Question
 function checkAnswer(buttonId) {
-    //buttonD.textContent = "TEST";
-    document.getElementById(buttonId).textContent = "Test";
 
+    if (buttonId === currentQuestion.correctanswers)
+    {
+
+    //buttonD.textContent = "TEST";
+    document.getElementById(buttonId).textContent = "Right";
+    }
 }
 
 
