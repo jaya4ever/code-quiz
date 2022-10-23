@@ -11,7 +11,7 @@
     <title>Code Quiz</title>
 </head>
 
-<body>
+<body onload="myFunction()">
     <header>
         <a href="HighScores">View High Scores</a>
         <div id="timer">Time: 0</div>
@@ -19,9 +19,8 @@
     <main>
         <div id="questionsBody">
             <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit.</p>
-            <p>Keep in mind that incorrect answers will penalize your score/time by 15 seconds!
-            </p>
+            <h3>Try to answer the following code-related questions within the time limit.Keep in mind that incorrect answers will penalize your score/time by 15 seconds!
+            </h3>
             <button id="startTime">Start Quiz</button>
         </div>
 
@@ -29,7 +28,15 @@
             <!-- <h2 id="question"></h2>
             <div id="btns"></div> -->
         </div>
-         <div id="currentTime"></div>
+
+        <div id="questions"></div>
+        <button id="a" onclick="checkAnswer('a')">A</button>
+        <button id="b" onclick="checkAnswer('b')">B</button>
+        <button id="c" onclick="checkAnswer('c')">C</button>
+        <button id="d" onclick="checkAnswer('d')">D</button>
+
+
+        <div id="currentTime"></div>
         <div id="initalsContainer" class="hide">
             <h3>Please enter your intitals:</h3>
             <form id="initalsForm">
@@ -43,6 +50,7 @@
 
 
     <script src="./Assets/js/script.js"></script>
+    
 
 </body>
 
