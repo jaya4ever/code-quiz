@@ -64,9 +64,13 @@ const questionsAndAnswers =
 
 // Change time here to reduce penalty
 const wrongAnswerPenaltyInSeconds = 15; // 15 Seconds Penalty for Wrong Answers
+const totalTimeForGame = 76;
 
+// Global variables to track time.
 var timeInterval = 0;
-var secondsLeft = 76;
+var secondsLeft = totalTimeForGame;
+var userScoreInSeconds = 0;
+var allQuestionsAnswered = false;
 
 startbtn.addEventListener("click", startQuiz);
 
@@ -90,6 +94,9 @@ function initializeApplication() {
 function initializeQuiz() {
     currentScore = 0;
     currentQuestionIndex;
+    secondsLeft = totalTimeForGame;
+    userScoreInSeconds = 0;
+    allQuestionsAnswered = false;
 
     // Show quiz Questions
     buttonA.hidden = false;
@@ -133,6 +140,16 @@ function checkAnswer(buttonId) {
 
             setupNextQuestion();
         }
+        else
+        {
+            // USER FINISHED ALL QUESTIONS !!!
+            // Record User Score and Kill Timer
+            userScoreInSeconds = secondsLeft;
+            secondsLeft = 0;
+            currentTime.textContent = "You answered all questions in "+userScoreInSeconds+" seconds.";
+            allQuestionsAnswered = true;
+        }
+
     }
     else
     {
@@ -178,7 +195,7 @@ function startQuiz() {
     if (timeInterval === 0) {
         timeInterval = setInterval(function () {
             secondsLeft--;
-            currentTime.textContent = "Time:" + secondsLeft;
+            if (!allQuestionsAnswered) currentTime.textContent = "Time:" + secondsLeft;
             timer.style.display = "none";
 
             console.log("Tick..\n");
@@ -189,10 +206,10 @@ function startQuiz() {
                 // User ran out of time.
 
                 clearInterval(timeInterval);
-                currentTime.textContent = "Times up";
+                if (!allQuestionsAnswered) currentTime.textContent = "Times up";
                 setupSignaturePage();
             }
-            else if (currentQuestionIndex > questionsAndAnswers.length)
+            /*else if (currentQuestionIndex > questionsAndAnswers.length)
             {
                 console.log("All Answered..\n");
 
@@ -200,12 +217,12 @@ function startQuiz() {
                 // User answered all questions under time !!!
 
                 clearInterval(timeInterval);
-                //currentTime.textContent = "You answered all questions in "+timeInterval+" seconds.";
-                //setupSignaturePage();
+                currentTime.textContent = "You answered all questions in "+timeInterval+" seconds.";
+                setupSignaturePage();
                 //currentTime.textContent = "Times up";
 
 
-            }
+            }*/
 
 
 
