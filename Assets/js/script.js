@@ -64,22 +64,20 @@ var secondsLeft = 76;
 startbtn.addEventListener("click", startQuiz);
 
 // Call on the start of the application to setup the Quiz
-function initializeApplication()
-{
+function initializeApplication() {
 
-// Set Initial State for Buttons to Hidden
-buttonA.hidden = true;
-buttonB.hidden = true;
-buttonC.hidden = true;
-buttonD.hidden = true;
+    // Set Initial State for Buttons to Hidden
+    buttonA.hidden = true;
+    buttonB.hidden = true;
+    buttonC.hidden = true;
+    buttonD.hidden = true;
 
 
 }
 
 
 // Start the Application , ENTRY POINT.
-function initializeQuiz()
-{
+function initializeQuiz() {
     currentScore = 0;
 
 
@@ -88,14 +86,13 @@ function initializeQuiz()
     buttonB.hidden = false;
     buttonC.hidden = false;
     buttonD.hidden = false;
-    
+
 
     setupNextQuestion();
 
 }
 
-function setupNextQuestion()
-{
+function setupNextQuestion() {
     // Get the initial question to ask
     currentQuestion = nextQuestion();
 
@@ -110,8 +107,7 @@ function setupNextQuestion()
 }
 
 // Check the Answer for the current Question
-function checkAnswer(buttonId)
-{
+function checkAnswer(buttonId) {
     //buttonD.textContent = "TEST";
     document.getElementById(buttonId).textContent = "Test";
 
@@ -120,23 +116,20 @@ function checkAnswer(buttonId)
 
 // Hide All buttons , and show Signature Page
 // Reset Initials
-function setupSignaturePage()
-{
+function setupSignaturePage() {
 
 
 }
 
 // Set the high score page 
-function setupHighScorePage()
-{
+function setupHighScorePage() {
 
 }
 
 // Get the next Question to Display
-function nextQuestion()  
-{ 
+function nextQuestion() {
     // TODO: Randomize Questions ? (Not in User Story) 
-    return(questionsAndAnswers[0]);
+    return (questionsAndAnswers[0]);
 }
 
 
