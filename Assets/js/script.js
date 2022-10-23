@@ -58,6 +58,9 @@ const questionsAndAnswers =
         }
     ];
 
+// Change time here to reduce penalty
+const wrongAnswerPenaltyInSeconds = 15; // 15 Seconds Penalty for Wrong Answers
+
 var timeInterval = 0;
 var secondsLeft = 76;
 
@@ -72,6 +75,9 @@ function initializeApplication() {
     buttonC.hidden = true;
     buttonD.hidden = true;
 
+    // Hide Timer on Start
+    timer.hidden = true;
+
 
 }
 
@@ -80,12 +86,14 @@ function initializeApplication() {
 function initializeQuiz() {
     currentScore = 0;
 
-
     // Show quiz Questions
     buttonA.hidden = false;
     buttonB.hidden = false;
     buttonC.hidden = false;
     buttonD.hidden = false;
+
+    // show timer
+    timer.hidden = false;
 
 
     setupNextQuestion();
@@ -119,6 +127,7 @@ function checkAnswer(buttonId) {
     {
 
         document.getElementById(buttonId).textContent = "Wrong"; 
+        secondsLeft -= wrongAnswerPenaltyInSeconds;
     }
 
 }
