@@ -14,7 +14,7 @@ var buttonD = document.getElementById('d');
 
 
 
-var questions_answers =
+var questionsAndAnswers =
     [
         {
             question: 'What is the Capital of Illinois:',
@@ -59,24 +59,56 @@ var secondsLeft = 76;
 
 startbtn.addEventListener("click", startQuiz);
 
-function myFunction()
+// Call on the start of the application to setup the Quiz
+function initializeApplication()
 {
+
 // Set Initial State for Buttons to Hidden
 buttonA.hidden = true;
 buttonB.hidden = true;
 buttonC.hidden = true;
 buttonD.hidden = true;
 
+
+
 }
+
+
+// Start the Quiz 
+function initializeQuiz()
+{
+    buttonA.hidden = false;
+    buttonB.hidden = false;
+    buttonC.hidden = false;
+    buttonD.hidden = false;
+    
+}
+
+// Hide All buttons , and show Signature Page
+// Reset Initials
+function setupSignaturePage()
+{
+
+
+}
+
+// Set the high score page 
+function setupHighScorePage()
+{
+
+}
+
+// Get the next Question to Display
+function nextQuestion()  
+{ 
+
+}
+
 
 function startQuiz() {
 
     // Set Initial State for Buttons to Hidden
-buttonA.hidden = false;
-buttonB.hidden = false;
-buttonC.hidden = false;
-buttonD.hidden = false;
-
+    initializeQuiz();
 
 
     if (timeInterval === 0) {
@@ -85,10 +117,12 @@ buttonD.hidden = false;
             currentTime.textContent = "Time:" + secondsLeft;
             timer.style.display = "none";
 
+            // Check Time , Check Question Count
 
             if (secondsLeft <= 0) {
                 clearInterval(timeInterval);
                 currentTime.textContent = "Times up";
+                setupSignaturePage();
             }
         }, 1000);
 
