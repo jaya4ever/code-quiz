@@ -16,6 +16,7 @@ var buttonD = document.getElementById('d');
 // Store the current correct right answer score
 var currentScore = 0;
 var currentQuestion = null;
+var currentQuestionIndex = 0;
 
 // The questions to ask 
 const questionsAndAnswers =
@@ -85,6 +86,7 @@ function initializeApplication() {
 // Start the Application , ENTRY POINT.
 function initializeQuiz() {
     currentScore = 0;
+    currentQuestionIndex;
 
     // Show quiz Questions
     buttonA.hidden = false;
@@ -120,8 +122,11 @@ function checkAnswer(buttonId) {
     if (buttonId === currentQuestion.correctanswers)
     {
 
+        currentScore++;
     //buttonD.textContent = "TEST";
     document.getElementById(buttonId).textContent = "Right";
+    setupNextQuestion();
+
     }
     else
     {
@@ -148,7 +153,7 @@ function setupHighScorePage() {
 // Get the next Question to Display
 function nextQuestion() {
     // TODO: Randomize Questions ? (Not in User Story) 
-    return (questionsAndAnswers[0]);
+    return (questionsAndAnswers[currentQuestionIndex++]);
 }
 
 
