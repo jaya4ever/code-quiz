@@ -67,11 +67,5 @@ a{
     text-decoration: none;
 }
 
-#Highscore {
+ 
 
-    justify-content: space-around;
-    border-bottom-style: outset;
-    margin-bottom: .5rem;
-    color: purple;
-    font-family: sans-serif;
-}
