@@ -2,11 +2,13 @@
 
 var startbtn = document.querySelector("#startTime");
 var questionsBody = document.querySelector("#questionsBody");
+var highScores = document.getElementById('Highscore');
 var timer = document.getElementById('timer');
 var container = document.querySelector("#container");
 var questionbutton = document.getElementById('questions');
 var currentTime = document.querySelector('#currentTime');
 var scores = document.getElementById('intialsContainer');
+var initialsContainer = document.getElementById('initialContainer');
 var questbn = document.getElementById('questions');
 var buttonA = document.getElementById('a');
 var buttonB = document.getElementById('b');
