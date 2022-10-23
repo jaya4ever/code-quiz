@@ -115,6 +115,12 @@ function checkAnswer(buttonId) {
     //buttonD.textContent = "TEST";
     document.getElementById(buttonId).textContent = "Right";
     }
+    else
+    {
+
+        document.getElementById(buttonId).textContent = "Wrong"; 
+    }
+
 }
 
 
