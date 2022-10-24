@@ -14,4 +14,3 @@
 ![Alt text]()![code-quiz](https://user-images.githubusercontent.com/111536082/197532095-c9c77381-e291-49af-9e91-4018205bb774.gif)
 
 
-https://github.com/jaya4ever/code-quiz/raw/main
