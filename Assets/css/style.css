@@ -67,5 +67,24 @@ a{
     text-decoration: none;
 }
 
+#goback{
+    font-weight: bold;
+    border: 1px solid lightblue;
+    border-radius: 50px;
+    margin: auto;
+    width: 200px;
+    padding: 20px;
+    color: white;
+}
  
 
+#playagain{
+
+    font-weight: bold;
+    border: 1px solid lightblue;
+    border-radius: 50px;
+    margin: auto;
+    width: 200px;
+    padding: 20px;
+    color: white;
+}

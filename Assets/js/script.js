@@ -32,7 +32,7 @@ const questionsAndAnswers =
             optionD: "Wheaton",
 
             correctanswers: "a"
-        } /*,
+        } ,
         {
             question: 'What is the Capital of Texas:',
             optionA: "Houston",
@@ -59,7 +59,7 @@ const questionsAndAnswers =
             optionD: "Pune",
 
             correctanswers: "c"
-        }*/
+        }
     ];
 
 // Change time here to reduce penalty
@@ -85,7 +85,7 @@ function initializeApplication() {
 
     // Hide Timer on Start
     timer.hidden = true;
-
+    timer.textContent = "Time: "+totalTimeForGame;
 
 }
 
@@ -134,7 +134,8 @@ function checkAnswer(buttonId) {
 
         currentScore++;
         //buttonD.textContent = "TEST";
-        document.getElementById(buttonId).textContent = "Right";
+        //document.getElementById(buttonId).textContent = "Right";
+        currentTime.textContent = "Right !!!";
         if (currentQuestionIndex < questionsAndAnswers.length) 
         {
 
@@ -154,7 +155,8 @@ function checkAnswer(buttonId) {
     else
     {
 
-        document.getElementById(buttonId).textContent = "Wrong"; 
+        //document.getElementById(buttonId).textContent = "Wrong"; 
+        currentTime.textContent = "Wrong !!!";
         secondsLeft -= wrongAnswerPenaltyInSeconds;
     }
 
@@ -195,8 +197,10 @@ function startQuiz() {
     if (timeInterval === 0) {
         timeInterval = setInterval(function () {
             secondsLeft--;
-            if (!allQuestionsAnswered) currentTime.textContent = "Time:" + secondsLeft;
-            timer.style.display = "none";
+            if (!allQuestionsAnswered) timer.textContent = "Time:" + secondsLeft;
+            //timer.style.display = "none";
+
+            timer.textContent = "Time:" + secondsLeft;
 
             console.log("Tick..\n");
             // Check Time , Check Question Count
@@ -206,7 +210,7 @@ function startQuiz() {
                 // User ran out of time.
 
                 clearInterval(timeInterval);
-                if (!allQuestionsAnswered) currentTime.textContent = "Times up";
+                if (!allQuestionsAnswered) timer.textContent = "Times up";
                 setupSignaturePage();
             }
             /*else if (currentQuestionIndex > questionsAndAnswers.length)
