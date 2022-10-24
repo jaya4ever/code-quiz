@@ -45,11 +45,8 @@ const questionsAndAnswers =
             optionD: "if<>5",
 
             correctanswers: "a"
-
-
-
-
         },
+
         {
             question: 'A named element in a JavaScript program that is used to store and retrieve data is a _____.',
             optionA: "Method",
@@ -58,12 +55,8 @@ const questionsAndAnswers =
             optionD: "string",
 
             correctanswers: "c"
-
-
-
-
-
         },
+        
         {
             question: 'In JavaScript, which of the following is a logical operator?',
             optionA: "|",
@@ -74,9 +67,7 @@ const questionsAndAnswers =
             correctanswers: "b"
         }
 
-
-
-    ];
+        ];
 
 
 // Change time here to reduce penalty
