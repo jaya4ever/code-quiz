@@ -31,46 +31,53 @@ const questionsAndAnswers =
     [
         {
             question: 'How does a "for" loop start ?',
-            optionA: "for (i = 0; i <= 5)",
-            optionB: "for (i = 0; i <= 5; i++)",
+            optionA: "for(i = 0; i <= 5)",
+            optionB: "for(i = 0; i <= 5; i++)",
             optionC: "for i = 1 to 5",
-            optionD: "for (i <= 5; i++)",
+            optionD: "for(i<= 5; i++)",
             correctanswers: "b"
-        } ,
+        },
         {
             question: 'How do you write a conditional statement for executing some statements only if "i" is NOT equal to 5??',
-            optionA: "if (i != 5)",
-            optionB: "if =! 5 then",
-            optionC: "if (i <> 5)",
-            optionD: "if <>5",
+            optionA: "if(i!= 5)",
+            optionB: "if =!5 then",
+            optionC: "if(i <> 5)",
+            optionD: "if<>5",
 
             correctanswers: "a"
-            
+
 
 
 
         },
         {
-            question: 'What is the Capital of New York:',
-            optionA: "Chicago",
-            optionB: "Brooklyn",
-            optionC: "NewYork",
-            optionD: "Wheaton",
+            question: 'A named element in a JavaScript program that is used to store and retrieve data is a _____.',
+            optionA: "Method",
+            optionB: "assignment operator",
+            optionC: "Variable",
+            optionD: "string",
 
             correctanswers: "c"
+
+
+
+
+
         },
         {
-            question: 'What is the Capital of India:',
-            optionA: "Mumbai",
-            optionB: "Calcutta",
-            optionC: "Delhi",
-            optionD: "Pune",
+            question: 'In JavaScript, which of the following is a logical operator?',
+            optionA: "|",
+            optionB: "&&",
+            optionC: "%",
+            optionD: "/",
 
-            correctanswers: "c"
+            correctanswers: "b"
         }
         
+
+
     ];
-   
+
 
 // Change time here to reduce penalty
 const wrongAnswerPenaltyInSeconds = 15; // 15 Seconds Penalty for Wrong Answers
@@ -95,7 +102,7 @@ function initializeApplication() {
 
     // Hide Timer on Start
     timer.hidden = true;
-    timer.textContent = "Time: "+totalTimeForGame;
+    timer.textContent = "Time: " + totalTimeForGame;
 
 }
 
@@ -139,31 +146,27 @@ function setupNextQuestion() {
 // Check the Answer for the current Question
 function checkAnswer(buttonId) {
 
-    if (buttonId === currentQuestion.correctanswers)
-    {
+    if (buttonId === currentQuestion.correctanswers) {
 
         currentScore++;
         //buttonD.textContent = "TEST";
         //document.getElementById(buttonId).textContent = "Right";
         currentTime.textContent = "Right !!!";
-        if (currentQuestionIndex < questionsAndAnswers.length) 
-        {
+        if (currentQuestionIndex < questionsAndAnswers.length) {
 
             setupNextQuestion();
         }
-        else
-        {
+        else {
             // USER FINISHED ALL QUESTIONS !!!
             // Record User Score and Kill Timer
             userScoreInSeconds = secondsLeft;
             secondsLeft = 0;
-            currentTime.textContent = "You answered all questions in "+userScoreInSeconds+" seconds.";
+            currentTime.textContent = "You answered all questions in " + userScoreInSeconds + " seconds.";
             allQuestionsAnswered = true;
         }
 
     }
-    else
-    {
+    else {
 
         //document.getElementById(buttonId).textContent = "Wrong"; 
         currentTime.textContent = "Wrong !!!";
@@ -176,12 +179,12 @@ submitBtn.addEventListener("click", highScore);
 var highScoreInitialName;
 var savedInitialHighScores;
 
-function highScore(){
- if(highScoreInitialName === null){
-    return false;
- }else{
-      savedInitialHighScores = JSON.stringify(localStorage.getItem("savedInitialHighScores"));
- }
+function highScore() {
+    if (highScoreInitialName === null) {
+        return false;
+    } else {
+        savedInitialHighScores = JSON.stringify(localStorage.getItem("savedInitialHighScores"));
+    }
 }
 
 // Hide All buttons , and show Signature Page
@@ -194,11 +197,11 @@ function setupSignaturePage() {
 // Set the high score page 
 function setupHighScorePage() {
 
-// Set Initial State for Buttons to Hidden
-buttonA.hidden = true;
-buttonB.hidden = true;
-buttonC.hidden = true;
-buttonD.hidden = true;
+    // Set Initial State for Buttons to Hidden
+    buttonA.hidden = true;
+    buttonB.hidden = true;
+    buttonC.hidden = true;
+    buttonD.hidden = true;
 
 }
 
