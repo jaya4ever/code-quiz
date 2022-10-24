@@ -39,6 +39,9 @@ main {
 
 #questionsBody {
     margin: 20px;
+    font-weight: bold;
+    font-size: 2em;
+
 }
 
 h1 {
@@ -63,11 +66,12 @@ button {
     width: 250px;
     margin-top: 4px;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-#goback{
+#goback {
     font-weight: bold;
     border: 1px solid lightblue;
     border-radius: 50px;
@@ -76,9 +80,9 @@ a{
     padding: 20px;
     color: white;
 }
- 
 
-#playagain{
+
+#playagain {
 
     font-weight: bold;
     border: 1px solid lightblue;

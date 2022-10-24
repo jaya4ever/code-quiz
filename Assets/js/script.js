@@ -21,6 +21,9 @@ var currentScore = 0;
 var currentQuestion = null;
 var currentQuestionIndex = 0;
 
+// Fade out the wrong / right answer.
+var answerFadeOutTime;
+
 // The questions to ask 
 const questionsAndAnswers =
     [
