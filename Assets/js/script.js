@@ -30,13 +30,12 @@ var answerFadeOutTime;
 const questionsAndAnswers =
     [
         {
-            question: 'What is the Capital of Illinois:',
-            optionA: "Chicago",
-            optionB: "Naperville",
-            optionC: "Springfield",
-            optionD: "Wheaton",
-
-            correctanswers: "a"
+            question: 'How does a "for" loop start ?',
+            optionA: "for (i = 0; i <= 5)",
+            optionB: "for (i = 0; i <= 5; i++)",
+            optionC: "for i = 1 to 5",
+            optionD: "for (i <= 5; i++)",
+            correctanswers: "b"
         } ,
         {
             question: 'What is the Capital of Texas:',
