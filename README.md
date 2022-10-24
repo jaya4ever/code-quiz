@@ -6,3 +6,5 @@
 
 ### This is the GitHub Page URL of my current assignment which is code-quiz.
 [GitHubPage]( https://jaya4ever.github.io/code-quiz/ "GitHub Page")
+
+![Alt text]()![code-quiz](https://user-images.githubusercontent.com/111536082/197532095-c9c77381-e291-49af-9e91-4018205bb774.gif)
