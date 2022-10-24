@@ -224,7 +224,7 @@ function startQuiz() {
             if (!allQuestionsAnswered) timer.textContent = "Time:" + secondsLeft;
             //timer.style.display = "none";
 
-            timer.textContent = "Time:" + secondsLeft;
+            //timer.textContent = "Time:" + secondsLeft;
 
             console.log("Tick..\n");
             // Check Time , Check Question Count
