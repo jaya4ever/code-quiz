@@ -10,6 +10,8 @@ var container = document.querySelector("#container");
 var questionbutton = document.getElementById('questions');
 var currentTime = document.querySelector('#currentTime');
 var scores = document.getElementById('intialsContainer');
+var highScorepage = document.getElementById('highscoreContainer');
+var submitBtn = document.querySelector('#submit');
 
 var buttonA = document.getElementById('a');
 var buttonB = document.getElementById('b');
@@ -63,7 +65,9 @@ const questionsAndAnswers =
 
             correctanswers: "c"
         }
+        
     ];
+   
 
 // Change time here to reduce penalty
 const wrongAnswerPenaltyInSeconds = 15; // 15 Seconds Penalty for Wrong Answers
@@ -164,7 +168,18 @@ function checkAnswer(buttonId) {
     }
 
 }
+//function for high score
+submitBtn.addEventListener("click", highScore);
+var highScoreInitialName;
+var savedInitialHighScores;
 
+function highScore(){
+ if(highScoreInitialName === null){
+    return false;
+ }else{
+      savedInitialHighScores = JSON.stringify(localStorage.getItem("savedInitialHighScores"));
+ }
+}
 
 // Hide All buttons , and show Signature Page
 // Reset Initials

@@ -40,9 +40,9 @@ main {
 #questionsBody {
     margin: 20px;
     font-weight: bold;
-    font-size: 2em;
-
+    font-size: 1.5em
 }
+
 
 h1 {
     text-align: center;
@@ -91,4 +91,14 @@ a {
     width: 200px;
     padding: 20px;
     color: white;
+}
+
+#currentTime {
+
+    padding: 20px;
+    font-size: large;
+    font-weight: bold;
+    margin-inline: auto;
+    align-items: center;
+    text-decoration: underline;
 }
