@@ -38,13 +38,17 @@ const questionsAndAnswers =
             correctanswers: "b"
         } ,
         {
-            question: 'What is the Capital of Texas:',
-            optionA: "Houston",
-            optionB: "Austin",
-            optionC: "Nashville",
-            optionD: "Wheaton",
+            question: 'How do you write a conditional statement for executing some statements only if "i" is NOT equal to 5??',
+            optionA: "if (i != 5)",
+            optionB: "if =! 5 then",
+            optionC: "if (i <> 5)",
+            optionD: "if <>5",
 
-            correctanswers: "b"
+            correctanswers: "a"
+            
+
+
+
         },
         {
             question: 'What is the Capital of New York:',
