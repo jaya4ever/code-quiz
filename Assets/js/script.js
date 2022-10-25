@@ -12,6 +12,9 @@ var currentTime = document.querySelector('#currentTime');
 var scores = document.getElementById('intialsContainer');
 var highScorepage = document.getElementById('highscoreContainer');
 var submitBtn = document.querySelector('#submit');
+//var initialsForm = document.querySelector('#initalsForm');
+var initials = document.getElementById('initials');//document.querySelector('#initials');
+var initialsContainer = document.getElementById('initialsContainer');
 
 var buttonA = document.getElementById('a');
 var buttonB = document.getElementById('b');
@@ -56,7 +59,7 @@ const questionsAndAnswers =
 
             correctanswers: "c"
         },
-        
+
         {
             question: 'In JavaScript, which of the following is a logical operator?',
             optionA: "|",
