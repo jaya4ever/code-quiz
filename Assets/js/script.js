@@ -70,7 +70,7 @@ const questionsAndAnswers =
             correctanswers: "b"
         }
 
-        ];
+    ];
 
 
 // Change time here to reduce penalty
@@ -145,8 +145,7 @@ function setupNextQuestion() {
 
 
 }
-function saveInitialsToLocalStorage(usersInitials,scoreInSeconds)
-{
+function saveInitialsToLocalStorage(usersInitials, scoreInSeconds) {
     //Clear Storage.
     //localStorage.clear();
 
@@ -154,43 +153,37 @@ function saveInitialsToLocalStorage(usersInitials,scoreInSeconds)
 
     console.log("ALL HIGH SCORES: " + allHighScores);
 
-    var highScoreEntry = {name:usersInitials,score:scoreInSeconds};
+    var highScoreEntry = { name: usersInitials, score: scoreInSeconds };
 
     allHighScores.push(highScoreEntry);
 
-    localStorage.setItem(highScoreIndexInStorage,JSON.stringify(allHighScores));
+    localStorage.setItem(highScoreIndexInStorage, JSON.stringify(allHighScores));
 
     // Test we are saving data
     dumpHighScoresInStorage();
 }
-function getHighScoresInStorageArray()
-{
+function getHighScoresInStorageArray() {
     var storedHighScores = localStorage.getItem(highScoreIndexInStorage);
-    if (storedHighScores)
-    {
-        return(JSON.parse(storedHighScores));
+    if (storedHighScores) {
+        return (JSON.parse(storedHighScores));
     }
-    else
-    {
+    else {
         return ([]);
     }
 }
 
 // Dump High Scores
-function dumpHighScoresInStorage()
-{
-    console.log("HIGH SCORES: "+localStorage.getItem(highScoreIndexInStorage));
+function dumpHighScoresInStorage() {
+    console.log("HIGH SCORES: " + localStorage.getItem(highScoreIndexInStorage));
 
 }
 
 //   <div id=highscoreContainer><a href="HighScores">View High Scores</a></div>
-       
+
 //<button id="highScoreBtn" onclick="submitHighScore()" type="submit">Submit  </button>
-       
-function showHighScores()
-{
-    if (buttonHighScore.textContent === "Play Again")
-    {
+
+function showHighScores() {
+    if (buttonHighScore.textContent === "Play Again") {
         buttonHighScore.textContent = "View High Scores";
         initializeApplication();
         startQuiz();
@@ -202,19 +195,18 @@ function showHighScores()
 
     var allScores = "";
 
-    for (i=0;i<allHighScores.length;i++)
-    {
+    for (i = 0; i < allHighScores.length; i++) {
         var highScore = allHighScores[i];
 
-        var entryForScore = "Entry("+i+"): " + highScore.name + " Score: "+highScore.score;
+        var entryForScore = "Entry(" + i + "): " + highScore.name + " Score: " + highScore.score;
 
         console.log(entryForScore);
-    
+
         allScores += entryForScore + "\n";
-    
+
     }
 
-    questionsBody.textContent = allScores; 
+    questionsBody.textContent = allScores;
 
     buttonHighScore.textContent = "Play Again";
 
@@ -226,7 +218,7 @@ function submitHighScore() {
 
     console.log("Click high scores");
     console.log(initials.value);
-    saveInitialsToLocalStorage(initials.value,userScoreInSeconds);
+    saveInitialsToLocalStorage(initials.value, userScoreInSeconds);
     // Restart Quiz
     startQuiz();
 }
@@ -304,11 +296,11 @@ function setupHighScorePage() {
 
 }
 
-    // Show Initials
-   
+// Show Initials
 
 
-    scores.hidden = true;
+
+scores.hidden = true;
 
 
 
