@@ -66,6 +66,9 @@ button {
     width: 250px;
     margin-top: 4px;
 }
+button:hover{
+    opacity: .75;
+}
 
 a {
     text-decoration: none;
