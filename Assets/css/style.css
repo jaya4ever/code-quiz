@@ -102,6 +102,23 @@ a {
     align-items: center;
     text-decoration: underline;
 }
+#highScoreBtn {
+    background-color: purple;
+    padding: 15px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+#submitInitials{
+    background-color: purple;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+    
+}
+
+
 
 
 @media screen and (max-width: 800px) {
