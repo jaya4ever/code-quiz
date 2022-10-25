@@ -272,20 +272,46 @@ function checkAnswer(buttonId) {
 // Hide All buttons , and show Signature Page
 // Reset Initials
 function setupSignaturePage() {
+    questionsBody.hidden = true;
 
+    buttonA.hidden = true;
+    buttonB.hidden = true;
+    buttonC.hidden = true;
+    buttonD.hidden = true;
+    timer.hidden = true;
+    //highScorepage.hidden = true;
+
+    // Show Initials
+    initialsContainer.hidden = false;
+
+
+    //scores.hidden = false;
 
 }
 
+
+
+
 // Set the high score page 
 function setupHighScorePage() {
-
     // Set Initial State for Buttons to Hidden
     buttonA.hidden = true;
     buttonB.hidden = true;
     buttonC.hidden = true;
     buttonD.hidden = true;
 
+    scores.hidden = true;
+
 }
+
+    // Show Initials
+   
+
+
+    scores.hidden = true;
+
+
+
 
 // Get the next Question to Display
 function nextQuestion() {
