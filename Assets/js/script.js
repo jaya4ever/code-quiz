@@ -269,18 +269,6 @@ function checkAnswer(buttonId) {
     }
 
 }
-/*function for high score (trying to do it but not getting result)
-submitBtn.addEventListener("click", highScore);
-var highScoreInitialName;
-var savedInitialHighScores;
-
-function highScore() {
-    if (highScoreInitialName === null) {
-        return false;
-    } else {
-        savedInitialHighScores = JSON.stringify(localStorage.getItem("savedInitialHighScores"));
-    }
-}*/
 
 // Hide All buttons , and show Signature Page
 // Reset Initials
