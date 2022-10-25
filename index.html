@@ -7,17 +7,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
     <title>Code Quiz</title>
 </head>
 
 <body onload="initializeApplication()">
     <header>
         <!--<div id=highscoreContainer></div> -->
-        <button id="highScoreBtn" onclick="showHighScores()">View High Scores</button>
+       <button id="highScoreBtn" onclick="showHighScores()">View High Scores</button>
 
-       
-        <div id="timer">Time: TOP</div>
+
+
+        <div id="timer">Time: ---</div>
     </header>
     <main>
         <div id="questionsBody">
@@ -41,22 +42,22 @@
 
 
         <div id="currentTime"></div>
-        <div id="initalsContainer" class="hide">
-            <h3>Please enter your intitals:</h3>
-            <form id="initalsForm">
-                <label for="intitials">intitials</label>
-                <input type="text" id="intitials" />
+        <div id="initialsContainer" >
+            <h3>Please enter your initials:</h3>
+            <form id="initialsForm">
+                <label for="initials">initials</label>
+                <input type="text" id="initials" />
                 <button id="submitInitials" onclick="submitHighScore()" type="submit">Submit  </button>
-
             </form>
         </div>
 
     </main>
 
 
-    <script src="./assets/js/script.js"></script>
+    <script src="./Assets/js/script.js"></script>
 
 
 </body>
 
 </html>
+
