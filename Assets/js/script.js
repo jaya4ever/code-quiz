@@ -76,6 +76,8 @@ const questionsAndAnswers =
 // Change time here to reduce penalty
 const wrongAnswerPenaltyInSeconds = 15; // 15 Seconds Penalty for Wrong Answers
 const totalTimeForGame = 76;
+const highScoreIndexInStorage = "highscores";
+
 
 // Global variables to track time.
 var timeInterval = 0;
@@ -97,6 +99,8 @@ function initializeApplication() {
     // Hide Timer on Start
     timer.hidden = true;
     timer.textContent = "Time: " + totalTimeForGame;
+    initialsContainer.hidden = true;
+
 
 }
 
@@ -114,6 +118,11 @@ function initializeQuiz() {
     buttonB.hidden = false;
     buttonC.hidden = false;
     buttonD.hidden = false;
+
+    // Hide Initials
+    //scores.hidden = true;
+    //initialsForm.hidden = true;
+    initialsContainer.hidden = true;
 
     // show timer
     timer.hidden = false;
