@@ -163,6 +163,75 @@ function saveInitialsToLocalStorage(usersInitials,scoreInSeconds)
     // Test we are saving data
     dumpHighScoresInStorage();
 }
+function getHighScoresInStorageArray()
+{
+    var storedHighScores = localStorage.getItem(highScoreIndexInStorage);
+    if (storedHighScores)
+    {
+        return(JSON.parse(storedHighScores));
+    }
+    else
+    {
+        return ([]);
+    }
+}
+
+// Dump High Scores
+function dumpHighScoresInStorage()
+{
+    console.log("HIGH SCORES: "+localStorage.getItem(highScoreIndexInStorage));
+
+}
+
+//   <div id=highscoreContainer><a href="HighScores">View High Scores</a></div>
+       
+//<button id="highScoreBtn" onclick="submitHighScore()" type="submit">Submit  </button>
+       
+function showHighScores()
+{
+    if (buttonHighScore.textContent === "Play Again")
+    {
+        buttonHighScore.textContent = "View High Scores";
+        initializeApplication();
+        startQuiz();
+        return;
+    }
+
+
+    var allHighScores = getHighScoresInStorageArray();
+
+    var allScores = "";
+
+    for (i=0;i<allHighScores.length;i++)
+    {
+        var highScore = allHighScores[i];
+
+        var entryForScore = "Entry("+i+"): " + highScore.name + " Score: "+highScore.score;
+
+        console.log(entryForScore);
+    
+        allScores += entryForScore + "\n";
+    
+    }
+
+    questionsBody.textContent = allScores; 
+
+    buttonHighScore.textContent = "Play Again";
+
+}
+
+
+// Submit Action
+function submitHighScore() {
+
+    console.log("Click high scores");
+    console.log(initials.value);
+    saveInitialsToLocalStorage(initials.value,userScoreInSeconds);
+    // Restart Quiz
+    startQuiz();
+}
+
+
 
 
 // Check the Answer for the current Question
