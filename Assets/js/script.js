@@ -9,7 +9,7 @@ var container = document.querySelector("#container");
 // TODO: Should I call this question or questions for group ?
 var questionbutton = document.getElementById('questions');
 var currentTime = document.querySelector('#currentTime');
-var scores = document.getElementById('intialsContainer');
+var scores = document.getElementById('initialsContainer');
 var highScorepage = document.getElementById('highscoreContainer');
 var submitBtn = document.querySelector('#submit');
 //var initialsForm = document.querySelector('#initalsForm');
@@ -20,6 +20,7 @@ var buttonA = document.getElementById('a');
 var buttonB = document.getElementById('b');
 var buttonC = document.getElementById('c');
 var buttonD = document.getElementById('d');
+var buttonHighScore = document.getElementById('highScoreBtn');
 
 // Store the current correct right answer score
 var currentScore = 0;
@@ -59,7 +60,7 @@ const questionsAndAnswers =
 
             correctanswers: "c"
         },
-
+        
         {
             question: 'In JavaScript, which of the following is a logical operator?',
             optionA: "|",
@@ -70,14 +71,13 @@ const questionsAndAnswers =
             correctanswers: "b"
         }
 
-    ];
+        ];
 
 
 // Change time here to reduce penalty
 const wrongAnswerPenaltyInSeconds = 15; // 15 Seconds Penalty for Wrong Answers
 const totalTimeForGame = 76;
 const highScoreIndexInStorage = "highscores";
-
 
 // Global variables to track time.
 var timeInterval = 0;
@@ -99,8 +99,8 @@ function initializeApplication() {
     // Hide Timer on Start
     timer.hidden = true;
     timer.textContent = "Time: " + totalTimeForGame;
-    initialsContainer.hidden = true;
 
+    initialsContainer.hidden = true;
 
 }
 
@@ -113,6 +113,7 @@ function initializeQuiz() {
     userScoreInSeconds = 0;
     allQuestionsAnswered = false;
 
+
     // Show quiz Questions
     buttonA.hidden = false;
     buttonB.hidden = false;
@@ -124,8 +125,10 @@ function initializeQuiz() {
     //initialsForm.hidden = true;
     initialsContainer.hidden = true;
 
+
     // show timer
     timer.hidden = false;
+
 
 
     setupNextQuestion();
@@ -145,7 +148,9 @@ function setupNextQuestion() {
 
 
 }
-function saveInitialsToLocalStorage(usersInitials, scoreInSeconds) {
+
+function saveInitialsToLocalStorage(usersInitials,scoreInSeconds)
+{
     //Clear Storage.
     //localStorage.clear();
 
@@ -153,37 +158,44 @@ function saveInitialsToLocalStorage(usersInitials, scoreInSeconds) {
 
     console.log("ALL HIGH SCORES: " + allHighScores);
 
-    var highScoreEntry = { name: usersInitials, score: scoreInSeconds };
+    var highScoreEntry = {name:usersInitials,score:scoreInSeconds};
 
     allHighScores.push(highScoreEntry);
 
-    localStorage.setItem(highScoreIndexInStorage, JSON.stringify(allHighScores));
+    localStorage.setItem(highScoreIndexInStorage,JSON.stringify(allHighScores));
 
     // Test we are saving data
     dumpHighScoresInStorage();
 }
-function getHighScoresInStorageArray() {
+
+function getHighScoresInStorageArray()
+{
     var storedHighScores = localStorage.getItem(highScoreIndexInStorage);
-    if (storedHighScores) {
-        return (JSON.parse(storedHighScores));
+    if (storedHighScores)
+    {
+        return(JSON.parse(storedHighScores));
     }
-    else {
+    else
+    {
         return ([]);
     }
 }
 
 // Dump High Scores
-function dumpHighScoresInStorage() {
-    console.log("HIGH SCORES: " + localStorage.getItem(highScoreIndexInStorage));
+function dumpHighScoresInStorage()
+{
+    console.log("HIGH SCORES: "+localStorage.getItem(highScoreIndexInStorage));
 
 }
 
 //   <div id=highscoreContainer><a href="HighScores">View High Scores</a></div>
-
+       
 //<button id="highScoreBtn" onclick="submitHighScore()" type="submit">Submit  </button>
-
-function showHighScores() {
-    if (buttonHighScore.textContent === "Play Again") {
+       
+function showHighScores()
+{
+    if (buttonHighScore.textContent === "Play Again")
+    {
         buttonHighScore.textContent = "View High Scores";
         initializeApplication();
         startQuiz();
@@ -195,18 +207,19 @@ function showHighScores() {
 
     var allScores = "";
 
-    for (i = 0; i < allHighScores.length; i++) {
+    for (i=0;i<allHighScores.length;i++)
+    {
         var highScore = allHighScores[i];
 
-        var entryForScore = "Entry(" + i + "): " + highScore.name + " Score: " + highScore.score;
+        var entryForScore = "Entry("+i+"): " + highScore.name + " Score: "+highScore.score;
 
         console.log(entryForScore);
-
+    
         allScores += entryForScore + "\n";
-
+    
     }
 
-    questionsBody.textContent = allScores;
+    questionsBody.textContent = allScores; 
 
     buttonHighScore.textContent = "Play Again";
 
@@ -218,11 +231,10 @@ function submitHighScore() {
 
     console.log("Click high scores");
     console.log(initials.value);
-    saveInitialsToLocalStorage(initials.value, userScoreInSeconds);
+    saveInitialsToLocalStorage(initials.value,userScoreInSeconds);
     // Restart Quiz
     startQuiz();
 }
-
 
 
 
@@ -257,13 +269,23 @@ function checkAnswer(buttonId) {
     }
 
 }
+/*function for high score (trying to do it but not getting result)
+submitBtn.addEventListener("click", highScore);
+var highScoreInitialName;
+var savedInitialHighScores;
 
-
-
+function highScore() {
+    if (highScoreInitialName === null) {
+        return false;
+    } else {
+        savedInitialHighScores = JSON.stringify(localStorage.getItem("savedInitialHighScores"));
+    }
+}*/
 
 // Hide All buttons , and show Signature Page
 // Reset Initials
 function setupSignaturePage() {
+
     questionsBody.hidden = true;
 
     buttonA.hidden = true;
@@ -281,11 +303,9 @@ function setupSignaturePage() {
 
 }
 
-
-
-
 // Set the high score page 
 function setupHighScorePage() {
+
     // Set Initial State for Buttons to Hidden
     buttonA.hidden = true;
     buttonB.hidden = true;
@@ -296,26 +316,28 @@ function setupHighScorePage() {
 
 }
 
-// Show Initials
-
-
-
-scores.hidden = true;
-
-
-
-
 // Get the next Question to Display
 function nextQuestion() {
     // TODO: Randomize Questions ? (Not in User Story) 
-    return (questionsAndAnswers[currentQuestionIndex++]);
+    if (currentQuestionIndex < questionsAndAnswers.length)
+    {
+        return (questionsAndAnswers[currentQuestionIndex++]);
+    }
 }
 
 
 function startQuiz() {
 
+
+   
+
     // Set Initial State for Buttons to Hidden
     initializeQuiz();
+
+
+     // Test 
+     //setupSignaturePage();
+     //return;
 
 
     if (timeInterval === 0) {
@@ -358,6 +380,4 @@ function startQuiz() {
 
     }
 }
-
-
 
