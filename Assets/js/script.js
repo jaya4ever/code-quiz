@@ -145,6 +145,25 @@ function setupNextQuestion() {
 
 
 }
+function saveInitialsToLocalStorage(usersInitials,scoreInSeconds)
+{
+    //Clear Storage.
+    //localStorage.clear();
+
+    var allHighScores = getHighScoresInStorageArray();
+
+    console.log("ALL HIGH SCORES: " + allHighScores);
+
+    var highScoreEntry = {name:usersInitials,score:scoreInSeconds};
+
+    allHighScores.push(highScoreEntry);
+
+    localStorage.setItem(highScoreIndexInStorage,JSON.stringify(allHighScores));
+
+    // Test we are saving data
+    dumpHighScoresInStorage();
+}
+
 
 // Check the Answer for the current Question
 function checkAnswer(buttonId) {
