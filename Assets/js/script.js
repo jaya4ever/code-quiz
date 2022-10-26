@@ -215,11 +215,11 @@ function showHighScores()
 
         console.log(entryForScore);
     
-        allScores += entryForScore + "\n";
-    
+        allScores += "<div>" + entryForScore + "</div>";
+     
     }
 
-    questionsBody.textContent = allScores; 
+    questionsBody.innerHTML = allScores; 
 
     buttonHighScore.textContent = "Play Again";
 
