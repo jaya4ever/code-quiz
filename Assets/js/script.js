@@ -6,14 +6,14 @@ var questionsBody = document.querySelector("#questionsBody");
 var timer = document.getElementById('timer');
 var container = document.querySelector("#container");
 
-// TODO: Should I call this question or questions for group ?
+
 var questionbutton = document.getElementById('questions');
 var currentTime = document.querySelector('#currentTime');
 var scores = document.getElementById('initialsContainer');
 var highScorepage = document.getElementById('highscoreContainer');
 var submitBtn = document.querySelector('#submit');
-//var initialsForm = document.querySelector('#initalsForm');
-var initials = document.getElementById('initials');//document.querySelector('#initials');
+
+var initials = document.getElementById('initials');
 var initialsContainer = document.getElementById('initialsContainer');
 
 var buttonA = document.getElementById('a');
@@ -188,7 +188,7 @@ function dumpHighScoresInStorage()
 
 }
 
-//   <div id=highscoreContainer><a href="HighScores">View High Scores</a></div>
+
        
 //<button id="highScoreBtn" onclick="submitHighScore()" type="submit">Submit  </button>
        
@@ -323,9 +323,7 @@ function startQuiz() {
     initializeQuiz();
 
 
-     // Test 
-     //setupSignaturePage();
-     //return;
+    
 
 
     if (timeInterval === 0) {
@@ -347,21 +345,7 @@ function startQuiz() {
                 if (!allQuestionsAnswered) timer.textContent = "Times up";
                 setupSignaturePage();
             }
-            /*else if (currentQuestionIndex > questionsAndAnswers.length)
-            {
-                console.log("All Answered..\n");
-
-                //console.log(currentQuestionIndex + "is " + questionsAndAnswers.length);
-                // User answered all questions under time !!!
-
-                clearInterval(timeInterval);
-                currentTime.textContent = "You answered all questions in "+timeInterval+" seconds.";
-                setupSignaturePage();
-                //currentTime.textContent = "Times up";
-
-
-            }*/
-
+            
 
 
         }, 1000);
